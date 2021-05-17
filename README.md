@@ -18,7 +18,7 @@ Refer to the module's webpage for details and alternatives.
 ***
 ### Data
 
-The main script, `trees/evaluate.py`, expects data to be located in `data/`, with one subfolder per true tree. All the other XML-files in this subfolder evaluated against this true tree. The true should be named *gold.xml*
+The main script, `trees/evaluate.py`, expects data to be located in `data/`, with one subfolder per true tree. All the other XML-files in this subfolder are evaluated against this true tree. The true tree should be named *gold.xml*
 
 ***
 
@@ -48,11 +48,11 @@ Distance: 27.0
 Normalized distance: 0.48214285714285715
 ```
 
-*Normalized distance* is the raw edit distance between the two trees divided by the number of nodes of the true tree. Intuitively, the more nodes the true tree has the higher is the likelihood that the user-generated tree will deviate from it. This is a simple (too simplistic maybe?) way to compare distances across differently sized trees.
+*Normalized distance* is the raw edit distance between the two trees divided by the number of nodes of the true tree. Intuitively, the more nodes the true tree has, the higher is the likelihood that the user-generated tree will deviate from it. This is a simple (too simplistic maybe?) way to compare distances across differently sized trees.
 
 
 ### Spelling alternatives
-The current implementation collects spelling alternatives for part of speech tags in a dictionary named *dict_of_spelling_alternatives* in `evaluate.py`. For instance, we don't want a node labeled *det* to be evaluated as being different from *DET*; *Determiner*, or *Det*. Prior to evaluation, every label is lowercased but for more "involved" differences, spelling alternatives need to be added to the dictionary.
+The current implementation collects spelling alternatives for part of speech tags in a dictionary named *dict_of_spelling_alternatives* in `evaluate.py`. For instance, we don't want a node labeled *det* to be evaluated as being different from *DET*; *Determiner*, or *Det*. Prior to evaluation, every label is lowercased but for more "involved" differences, spelling alternatives need to be manually added to the dictionary.
 
 
 ### TO DO / Issues
